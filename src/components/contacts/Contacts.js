@@ -6,7 +6,6 @@ import {
   TableHead,
   TableRow,
   TableBody,
-  rows,
   Paper
 } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
