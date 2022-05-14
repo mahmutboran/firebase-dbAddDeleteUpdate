@@ -7,20 +7,15 @@ import { ToastContainer } from 'react-toastify';
 const initalValue = { username: "", phoneNumber: "", gender: "NO INFO" }
 
 function App() {
-
   const [info, setInfo] = useState(initalValue)
-
   const handleFormSubmit = (e) => {
     e.preventDefault()
-
+    console.log(info)
     if (info.id) {
       EditUser(info)
     } else {
-
       AddUser(info)
     }
-
-
   }
 
   //!EDİT DATA

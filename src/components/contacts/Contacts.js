@@ -9,20 +9,15 @@ import {
   Paper
 } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-
 import EditIcon from '@mui/icons-material/Edit';
+import { useData, userDelete } from "../../utils/function";
 
 
-import { useData,userDelete } from "../../utils/function";
-// import DeleteIcon from '@mui/icons-material/Delete';
-// import EditIcon from '@mui/icons-material/Edit';
 
-
-const Contacts = ({editHandler}) => {
+const Contacts = ({ editHandler }) => {
 
   const { isLoading, contactList } = useData()
-
-
+  console.log(isLoading)
 
   return (
     <div>
@@ -61,19 +56,19 @@ const Contacts = ({editHandler}) => {
                   <TableCell textAlign="center">{item.phoneNumber}</TableCell>
                   <TableCell textAlign="center">{item.gender}</TableCell>
 
-                  <TableCell textAlign="center" 
-                  onClick={() => userDelete(item.id)}>
-                    <DeleteIcon style={{cursor:"pointer"}}  />
+                  <TableCell textAlign="center"
+                    onClick={() => userDelete(item.id)}>
+                    <DeleteIcon style={{ cursor: "pointer" }} />
                   </TableCell>
 
-                  <TableCell textAlign="center" 
-                  onClick={() => editHandler(
-                    item.id,
-                    item.username,
-                    item.phoneNumber,
-                    item.gender
+                  <TableCell textAlign="center"
+                    onClick={() => editHandler(
+                      item.id,
+                      item.username,
+                      item.phoneNumber,
+                      item.gender
                     )}>
-                    <EditIcon style={{cursor:"pointer"}}  />
+                    <EditIcon style={{ cursor: "pointer" }} />
                   </TableCell>
                 </TableRow>
 

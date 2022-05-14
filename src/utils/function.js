@@ -1,7 +1,7 @@
 
 //!Database bilgi ekleme,bilgiyi silme,bilgiyi alma
 
-
+import firebase from "./firebase"
 
 import { getDatabase, ref, set, push, onValue, remove,update } from "firebase/database";
 import { useEffect, useState } from "react";
@@ -14,9 +14,10 @@ export const AddUser = (info) => {
 
     //const database = getDatabase();
     const db = getDatabase();
+    console.log(db)
     const userRef = ref(db, "bilgiler")
     const newUserRef = push(userRef)
-    /*    set((newUserRef),{
+   /*     set((newUserRef),{
            username:info.username,
            phoneNumber:info.phoneNumber,
            gender:info.gender
@@ -35,10 +36,10 @@ export const AddUser = (info) => {
 export const useData = () => {
     const [isLoading, setIsLoading] = useState()
     const [contactList, setContactList] = useState()
-
     useEffect(() => {
         setIsLoading(true)
         const db = getDatabase();
+        console.log(isLoading)
         const userRef = ref(db, "bilgiler")
 
         onValue(userRef, (snapshot) => {
